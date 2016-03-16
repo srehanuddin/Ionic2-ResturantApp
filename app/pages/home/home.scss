@@ -1,4 +1,13 @@
 .home {
-  background: url('./../../../images/bg.png') transparent;
+  background: url('../../images/bg.png') transparent;
   background-size: 100%;
+}
+
+.home-btn {
+    position: absolute;
+    top: 10px;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    z-index: 10001;
 }
