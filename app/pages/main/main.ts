@@ -2,6 +2,8 @@ import {Page, NavController} from 'ionic-angular';
 
 import {ContactPage} from './../contact/contact';
 import {DashPage} from './../dash/dash';
+import {AboutPage} from './../about/about';
+import {MenuPage} from './../menu/menu';
 //import {MainPage} from './../main/main';
 
 @Page({
@@ -14,6 +16,8 @@ export class MainPage {
     //Pages
     contactPage = ContactPage;
     dashPage = DashPage;
+    aboutPage = AboutPage;
+    menuPage = MenuPage;
     //mainPage = MainPage;
 
     constructor(nav: NavController){
