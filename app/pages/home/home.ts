@@ -1,6 +1,6 @@
 import {Page, NavController} from 'ionic-angular';
 
-import {DashPage} from './../dash/dash';
+import {MainPage} from './../main/main';
 
 @Page({
   templateUrl: 'build/pages/home/home.html'
@@ -13,8 +13,8 @@ export class HomePage {
         this.nav = nav;
     }
     
-    goToDashboard(){
-        this.nav.push(DashPage);
+    goToMainPage(){
+        this.nav.push(MainPage);
     }
     
 }
