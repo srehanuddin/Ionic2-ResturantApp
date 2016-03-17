@@ -1,20 +1,31 @@
+
+
 <ion-content>
     
-    <ion-navbar *navbar danger >
+    <!--<ion-navbar *navbar danger >
         <ion-title>
             Home
         </ion-title>
-    </ion-navbar>
+    </ion-navbar>-->
     
     <!--<ion-nav id="nav" [root]="contactPage" #content swipe-back-enabled="false"></ion-nav>-->
         
     <ion-tabs danger tabbarPlacement="bottom">
-        <ion-tab tabIcon="home" tabTitle="Home" ></ion-tab>
+        <ion-tab tabIcon="home" tabTitle="Home" [root]="dashPage" ></ion-tab>
         <ion-tab tabIcon="menu" tabTitle="Menu" ></ion-tab>
-        <ion-tab tabIcon="mail" tabTitle="Contact" (select)="goToPage(contactPage)" ></ion-tab>
+        <ion-tab tabIcon="mail" tabTitle="Contact" [root]="contactPage" ></ion-tab>
         <ion-tab tabIcon="git-network" tabTitle="About" ></ion-tab>
     </ion-tabs>
 
 </ion-content>
 
 
+<!--
+<ion-content>
+<ion-tabs>
+      <ion-tab tabIcon="heart" [root]="dashPage"></ion-tab>
+      <ion-tab tabIcon="star" [root]="contactPage"></ion-tab>
+    </ion-tabs>
+
+</ion-content>
+-->
