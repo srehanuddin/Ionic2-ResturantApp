@@ -13,9 +13,7 @@ export class HomePage {
         this.nav = nav;
     }
     
-    goToHome(){
-        //push another page onto the history stack
-        //causing the nav controller to animate the new page in
+    goToDashboard(){
         this.nav.push(DashPage);
     }
     
