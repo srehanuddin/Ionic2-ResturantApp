@@ -1,4 +1,4 @@
-import {Page, NavController, Alert} from 'ionic-angular';
+import {Page, NavController, Alert, ViewController, Modal} from 'ionic-angular';
 
 import {CartItem, CartService} from '../../services/menu-service';
 
@@ -19,6 +19,11 @@ export class CartPage {
         this.cartList = cartService.getAllCartItems();
         
         //console.log(this.cartList);
+    }
+    
+    checkout(){
+        let modal = Modal.create(MyModal);
+        this.nav.present(modal);
     }
     
     getTotal(): number{
@@ -76,4 +81,22 @@ export class CartPage {
         this.nav.push(page, null, { animate: false });
     }*/
        
+}
+
+
+@Page({
+  templateUrl: 'build/pages/cart/checkout.html'
+})
+class MyModal {
+  constructor(private viewCtrl: ViewController, private cartService : CartService) {
+    //this.viewCtrl = viewCtrl;
+  }
+  
+  close() {
+    this.viewCtrl.dismiss();
+  }
+  
+  Checkout(){
+      
+  }
 }

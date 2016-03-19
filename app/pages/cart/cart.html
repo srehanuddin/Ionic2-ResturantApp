@@ -8,10 +8,14 @@
 <ion-content>
 
     <ion-list>
+        
+    <button block primary *ngIf="cartList.length" (click)="checkout()">
+        <ion-icon name="ios-cart"></ion-icon>
+        Checkout
+    </button>
     
     <ion-item *ngFor="#item of cartList">
-        <ion-thumbnail item-left>
-            <ion-badge item-right>260k</ion-badge>
+        <ion-thumbnail item-left>            
         <img src="images/menu/{{item.image}}">
         </ion-thumbnail>
         <h2>{{item.title}}</h2>

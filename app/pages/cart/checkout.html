@@ -1,0 +1,44 @@
+<ion-content padding>
+    <h2 class="danger-bg">Checkout</h2>
+    
+    <ion-card>
+        
+        <ion-item>
+            <ion-label floating>Name</ion-label>
+            <ion-input type="text"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+            <ion-label floating>Email</ion-label>
+            <ion-input type="text"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+            <ion-label floating>Phone</ion-label>
+            <ion-input type="number"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+            <ion-label floating>Address</ion-label>
+            <ion-textarea></ion-textarea>
+        </ion-item>
+        
+        <ion-item>
+            
+            <ion-row center>
+                
+                <ion-col width-50  class="center" >
+                    <button block danger large (click)="close()">Cancel</button>
+                </ion-col>
+                
+                <ion-col width-50  class="center" >
+                    <button block danger large (click)="Checkout()">Checkout</button>
+                </ion-col>
+                
+            </ion-row>
+  
+        </ion-item>
+        
+    </ion-card>
+    
+  </ion-content>
