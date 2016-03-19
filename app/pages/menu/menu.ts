@@ -1,26 +1,33 @@
 import {Page, NavController} from 'ionic-angular';
 
-import {MenuService, MenuItem} from '../../services/menu-service';
+import {MenuService, MenuItem, CartService} from '../../services/menu-service';
 
 @Page({
   templateUrl: 'build/pages/menu/menu.html',
-  providers : [MenuService]
+  providers : [MenuService, CartService]
 })
 export class MenuPage {
 
     nav : NavController;
     menu : Array<MenuItem>;
-
-    constructor(nav: NavController, menuService:MenuService){
-        this.nav = nav;
+    menuService : MenuService;
+    cartService : CartService;
+    
+    constructor(nav: NavController, menuService:MenuService, cartService : CartService ){
         
-        //console.log(menuService.getAllMenuItems());        
+        this.nav = nav;
+        this.menuService = menuService;
+        this.cartService = cartService;
+             
         this.menu = menuService.getAllMenuItems();
     }
     
     addToCart(item){
-        console.log(item);
+        console.log(item);        
+        this.cartService.addItem(item, 1);
     }
+    
+    
     
     /*goToPage(page){
         this.nav.setRoot(page, null, { animate: false });

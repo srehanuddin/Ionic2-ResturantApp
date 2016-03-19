@@ -73,16 +73,29 @@ export class CartService {
         return this.list;
     }
     
-    getItemById(id){
+    getItemById(id: Number){
         for(var i = 0; i < this.list.length; i++){
-            if(this.list[i] == id){
+            if(this.list[i].id == id){
                 return this.list[i];
             }
         }
     }
     
     addItem(item : MenuItem, quantity:number){
-        this.list.push(new CartItem(item, quantity));
+        
+        var isExists : boolean = false;
+        var id = item.id;
+        
+        for(var i = 0; i < this.list.length; i++){
+            if(this.list[i].id == id){
+                this.list[i].quantity += quantity;
+                isExists = true;
+                break;
+            }
+        }
+        if(!isExists){
+            this.list.push(new CartItem(item, quantity));
+        }
     }
     
     removeItemById(id){
