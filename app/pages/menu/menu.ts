@@ -14,9 +14,12 @@ export class MenuPage {
     constructor(nav: NavController, menuService:MenuService){
         this.nav = nav;
         
-        console.log(menuService.getAllMenuItems());
-        
+        //console.log(menuService.getAllMenuItems());        
         this.menu = menuService.getAllMenuItems();
+    }
+    
+    addToCart(item){
+        console.log(item);
     }
     
     /*goToPage(page){

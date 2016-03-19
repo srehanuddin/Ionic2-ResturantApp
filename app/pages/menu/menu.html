@@ -16,7 +16,7 @@
     </ion-thumbnail>
     <h2>{{item.title}}</h2>
     <p>Price : $ {{item.price}}</p>
-    <button clear item-right ><ion-icon name="ios-cart"></ion-icon></button>
+    <button clear item-right (click)="addToCart(item)" ><ion-icon name="ios-cart"></ion-icon></button>
   </ion-item>
 </ion-list>
     
