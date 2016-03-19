@@ -1,7 +1,7 @@
 import {Injectable} from 'angular2/core';
 
 /**
- * Food
+ * Menu Item
  */
 export class MenuItem {
     id:number;
@@ -13,7 +13,7 @@ export class MenuItem {
         this.id = id;
         this.title = title;
         this.price = price;
-        this.image = image
+        this.image = image;
     }
 }
 
@@ -37,5 +37,39 @@ export class MenuService {
     
     getAllMenuItems(){
         return this.menu;
+    }
+}
+
+
+/**
+ * Cart Item
+ */
+export class CartItem {
+    id:number;
+    title:string;
+    price:number;
+    image:string;
+    quantity:number;
+    
+    constructor(item : MenuItem, quantity:number) {
+        this.id = item.id;
+        this.title = item.title;
+        this.price = item.price;
+        this.image = item.image;
+        this.quantity = quantity;
+    }
+}
+
+
+@Injectable()
+export class CartService {
+    list : Array<CartItem>; 
+    
+    constructor(){
+        this.list = []
+    }
+    
+    getAllCartItems(){
+        return this.list;
     }
 }
