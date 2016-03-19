@@ -9,12 +9,13 @@
 
     <ion-list>
     
-    <ion-item>
+    <ion-item *ngFor="#item of cartList">
         <ion-thumbnail item-left>
-        <img src="images/menu/hjghj">
+        <img src="images/menu/{{item.image}}">
         </ion-thumbnail>
-        <h2>hghj</h2>
-        <p>Price : $ hjghj</p>
+        <h2>{{item.title}}</h2>
+        <p>Price : $ {{item.price}}</p>
+        <!--<button clear item-right (click)="addToCart(item)" ><ion-icon name="ios-cart"></ion-icon></button>-->
         <button clear item-right (click)="addToCart(item)" ><ion-icon name="ios-arrow-dropup-circle"></ion-icon></button>
         <button clear item-right (click)="addToCart(item)" ><ion-icon name="ios-arrow-dropdown-circle"></ion-icon></button>
         <button clear item-right (click)="addToCart(item)" ><ion-icon name="ios-remove-circle"></ion-icon></button>

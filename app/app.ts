@@ -2,8 +2,11 @@ import {App, Platform} from 'ionic-angular';
 
 import {HomePage} from './pages/home/home';
 
+import {MenuService, CartService} from './services/menu-service';
+
 @App({
   template: '<ion-nav [root]="rootPage"></ion-nav>',
+  providers : [MenuService, CartService],
   config: {} // http://ionicframework.com/docs/v2/api/config/Config/
 })
 export class MyApp {

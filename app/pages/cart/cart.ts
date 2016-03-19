@@ -1,14 +1,23 @@
 import {Page, NavController} from 'ionic-angular';
 
+import {CartItem, CartService} from '../../services/menu-service';
+
 @Page({
-  templateUrl: 'build/pages/cart/cart.html'
+  templateUrl: 'build/pages/cart/cart.html',
+  //providers : [CartService]
 })
 export class CartPage {
 
-    nav : NavController
+    nav : NavController;
+    cartList : Array<CartItem>;
+    //cartService : CartService;
 
-    constructor(nav: NavController){
+    constructor(nav: NavController, private cartService : CartService ){
         this.nav = nav;
+        
+        //this.cartService = cartService;
+        
+        this.cartList = cartService.getAllCartItems();
     }
     
     /*goToPage(page){
