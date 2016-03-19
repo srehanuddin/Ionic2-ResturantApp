@@ -24,6 +24,8 @@ export class MenuPage {
     addToCart(item){
         console.log(item);        
         this.cartService.addItem(item, 1);
+        
+        console.log(this.cartService.getAllCartItems());
     }
     
     

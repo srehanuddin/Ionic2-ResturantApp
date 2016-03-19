@@ -17,6 +17,8 @@ export class CartPage {
         //this.cartService = cartService;
         
         this.cartList = cartService.getAllCartItems();
+        
+        console.log(this.cartList);
     }
     
     getTotal(): number{
