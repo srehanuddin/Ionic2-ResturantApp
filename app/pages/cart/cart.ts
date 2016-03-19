@@ -1,9 +1,9 @@
 import {Page, NavController} from 'ionic-angular';
 
 @Page({
-  templateUrl: 'build/pages/dash/dash.html'
+  templateUrl: 'build/pages/cart/cart.html'
 })
-export class DashPage {
+export class CartPage {
 
     nav : NavController
 

@@ -39,4 +39,3 @@ export class MenuService {
         return this.menu;
     }
 }
-
