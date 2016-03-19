@@ -1,12 +1,27 @@
 
-    <ion-navbar *navbar danger >
-        <ion-title>
-            Cart
-        </ion-title>
-    </ion-navbar>
+<ion-navbar *navbar danger >
+    <ion-title>
+        Cart
+    </ion-title>
+</ion-navbar>
+
+<ion-content>
+
+    <ion-list>
     
-    <ion-content>
-    Cart
-    </ion-content>
+    <ion-item>
+        <ion-thumbnail item-left>
+        <img src="images/menu/hjghj">
+        </ion-thumbnail>
+        <h2>hghj</h2>
+        <p>Price : $ hjghj</p>
+        <button clear item-right (click)="addToCart(item)" ><ion-icon name="ios-arrow-dropup-circle"></ion-icon></button>
+        <button clear item-right (click)="addToCart(item)" ><ion-icon name="ios-arrow-dropdown-circle"></ion-icon></button>
+        <button clear item-right (click)="addToCart(item)" ><ion-icon name="ios-remove-circle"></ion-icon></button>
+    </ion-item>
+    
+    </ion-list>
+
+</ion-content>
     
 
