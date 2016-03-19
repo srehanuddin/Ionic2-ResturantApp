@@ -72,4 +72,24 @@ export class CartService {
     getAllCartItems(){
         return this.list;
     }
+    
+    getItemById(id){
+        for(var i = 0; i < this.list.length; i++){
+            if(this.list[i] == id){
+                return this.list[i];
+            }
+        }
+    }
+    
+    addItem(item : MenuItem, quantity:number){
+        this.list.push(new CartItem(item, quantity));
+    }
+    
+    removeItemById(id){
+        for(var i = 0; i < this.list.length; i++){
+            if(this.list[i] == id){
+                this.list.splice(i, 1);
+            }
+        }
+    }
 }
