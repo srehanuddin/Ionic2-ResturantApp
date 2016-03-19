@@ -59,7 +59,16 @@ export class CartPage {
     }
     
     quantityMinus(item){
-        this.cartService.quantityMinus(item);
+        if(item.quantity > 1){
+            this.cartService.quantityMinus(item);
+        } else {
+            let alert = Alert.create({
+                title: 'Error',
+                subTitle: 'Quantity is 1, you cant reduce it, if you want to remove, please press remove button.',
+                buttons: ['Ok']
+            });
+            this.nav.present(alert);
+        }
     }
     
     
