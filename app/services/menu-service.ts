@@ -107,6 +107,13 @@ export class CartService {
         }        
     }
     
+    emptyCart(){        
+        for(var i = 0; i < this.list.length; i++){
+            this.list.splice(i, 1);
+            i--;
+        }    
+    }
+    
     quantityPlus(item){
         item.quantity += 1;
     }

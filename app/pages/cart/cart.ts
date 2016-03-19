@@ -97,6 +97,7 @@ class MyModal {
   }
   
   Checkout(){
-      
+      this.cartService.emptyCart();
+      this.viewCtrl.dismiss();
   }
 }
