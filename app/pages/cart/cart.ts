@@ -1,4 +1,4 @@
-import {Page, NavController} from 'ionic-angular';
+import {Page, NavController, Alert} from 'ionic-angular';
 
 import {CartItem, CartService} from '../../services/menu-service';
 
@@ -18,11 +18,40 @@ export class CartPage {
         
         this.cartList = cartService.getAllCartItems();
         
-        console.log(this.cartList);
+        //console.log(this.cartList);
     }
     
     getTotal(): number{
         return this.cartService.getGrandTotal();
+    }
+    
+    removeItemFromCart(item){
+        //this.cartService.removeItemById(item.id);
+        
+        let self = this;
+        
+        let alert = Alert.create({
+            title: 'Confirm Delete',
+            message: 'Are you sure you want to remove food item from cart?',
+            buttons: [
+            {
+                text: 'Cancel',
+                role: 'cancel',
+                handler: () => {
+                    console.log('Cancel clicked');
+                }
+            },
+            {
+                text: 'Remove',
+                handler: () => {
+                    console.log('Buy clicked');                    
+                    self.cartService.removeItemById(item.id);
+                }
+            }
+            ]
+        });
+        this.nav.present(alert);
+        
     }
     
     

@@ -98,12 +98,13 @@ export class CartService {
         }
     }
     
-    removeItemById(id){
+    removeItemById(id){        
         for(var i = 0; i < this.list.length; i++){
-            if(this.list[i] == id){
+            if(this.list[i].id == id){
                 this.list.splice(i, 1);
+                break;
             }
-        }
+        }        
     }
     
     getGrandTotal(): number{
