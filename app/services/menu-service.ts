@@ -107,6 +107,14 @@ export class CartService {
         }        
     }
     
+    quantityPlus(item){
+        item.quantity += 1;
+    }
+    
+    quantityMinus(item){
+        item.quantity -= 1;
+    }
+    
     getGrandTotal(): number{
         var amount = 0;
         for(var i = 0; i < this.list.length; i++){

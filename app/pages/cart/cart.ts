@@ -54,6 +54,14 @@ export class CartPage {
         
     }
     
+    quantityPlus(item){
+        this.cartService.quantityPlus(item);
+    }
+    
+    quantityMinus(item){
+        this.cartService.quantityMinus(item);
+    }
+    
     
     /*goToPage(page){
         this.nav.push(page, null, { animate: false });

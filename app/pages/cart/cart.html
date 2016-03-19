@@ -16,8 +16,8 @@
         <h2>{{item.title}}</h2>
         <p>Price : ${{item.price}} x {{item.quantity}} = ${{item.price * item.quantity}}</p>
         
-        <button clear item-right (click)="addToCart(item)" ><ion-icon name="ios-arrow-dropup-circle"></ion-icon></button>
-        <button clear item-right (click)="addToCart(item)" ><ion-icon name="ios-arrow-dropdown-circle"></ion-icon></button>
+        <button clear item-right (click)="quantityPlus(item)" ><ion-icon name="ios-arrow-dropup-circle"></ion-icon></button>
+        <button clear item-right (click)="quantityMinus(item)" ><ion-icon name="ios-arrow-dropdown-circle"></ion-icon></button>
         <button clear item-right (click)="removeItemFromCart(item)" ><ion-icon name="ios-remove-circle"></ion-icon></button>
     </ion-item>
     
