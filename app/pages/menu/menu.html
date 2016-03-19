@@ -6,5 +6,19 @@
 </ion-navbar>
 
 <ion-content>
-    Menu
+   
+
+<ion-list>
+ 
+  <ion-item *ngFor="#item of menu">
+    <ion-thumbnail item-left>
+      <img src="images/menu/{{item.image}}">
+    </ion-thumbnail>
+    <h2>{{item.title}}</h2>
+    <p>Price : $ {{item.price}}</p>
+    <button clear item-right ><ion-icon name="ios-cart"></ion-icon></button>
+  </ion-item>
+</ion-list>
+    
+    
 </ion-content>
