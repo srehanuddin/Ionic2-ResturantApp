@@ -3,8 +3,7 @@ import {Page, NavController} from 'ionic-angular';
 import {CartItem, CartService} from '../../services/menu-service';
 
 @Page({
-  templateUrl: 'build/pages/cart/cart.html',
-  //providers : [CartService]
+  templateUrl: 'build/pages/cart/cart.html'
 })
 export class CartPage {
 
@@ -19,6 +18,11 @@ export class CartPage {
         
         this.cartList = cartService.getAllCartItems();
     }
+    
+    getTotal(): number{
+        return this.cartService.getGrandTotal();
+    }
+    
     
     /*goToPage(page){
         this.nav.push(page, null, { animate: false });

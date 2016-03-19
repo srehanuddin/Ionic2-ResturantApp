@@ -105,4 +105,12 @@ export class CartService {
             }
         }
     }
+    
+    getGrandTotal(): number{
+        var amount = 0;
+        for(var i = 0; i < this.list.length; i++){
+            amount += (this.list[i].price * this.list[i].quantity);
+        }
+        return amount;
+    }
 }

@@ -9,17 +9,27 @@
 
     <ion-list>
     
-    <ion-item *ngFor="#item of cartList">
+    <ion-item *ngIf="cartList.length" *ngFor="#item of cartList">
         <ion-thumbnail item-left>
         <img src="images/menu/{{item.image}}">
         </ion-thumbnail>
         <h2>{{item.title}}</h2>
-        <p>Price : $ {{item.price}}</p>
-        <!--<button clear item-right (click)="addToCart(item)" ><ion-icon name="ios-cart"></ion-icon></button>-->
+        <p>Price : ${{item.price}} x {{item.quantity}} = ${{item.price * item.quantity}}</p>
+        
         <button clear item-right (click)="addToCart(item)" ><ion-icon name="ios-arrow-dropup-circle"></ion-icon></button>
         <button clear item-right (click)="addToCart(item)" ><ion-icon name="ios-arrow-dropdown-circle"></ion-icon></button>
         <button clear item-right (click)="addToCart(item)" ><ion-icon name="ios-remove-circle"></ion-icon></button>
     </ion-item>
+    
+    <ion-item *ngIf="cartList.length" >
+        <h2>Grand Total</h2>        
+        <h2 item-right >{{getTotal()}}</h2>
+    </ion-item>
+    
+    <ion-item *ngIf="!cartList.length" >
+        <h2 class="center">Cart is empty</h2>       
+    </ion-item>
+    
     
     </ion-list>
 
