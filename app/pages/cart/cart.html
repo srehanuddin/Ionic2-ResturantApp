@@ -28,7 +28,7 @@
     
     <ion-item *ngIf="cartList.length" >
         <h2>Grand Total</h2>        
-        <h2 item-right >{{getTotal()}}</h2>
+        <h2 item-right >${{getTotal()}}</h2>
     </ion-item>
     
     <ion-item *ngIf="!cartList.length" >
